@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15) # Проверка версии CMake.
 									 # Если версия установленой программы
 									 # старее указаной, произайдёт аварийный выход.
 
-set(PROJECT_NAME Saper)				 # имя проекта		 
+set(PROJECT_NAME Animation)				 # имя проекта		 
 project("${PROJECT_NAME}")
 
 
@@ -17,10 +17,11 @@ include_directories("ext/SFML/include/")	# добавляем директори
 include_directories("/")
 link_directories("ext/SFML/lib/")	
 
-add_executable("${PROJECT_NAME}" saper.cpp 
-				Menu.cpp
-				Menu.hpp
-				images/App.rc)
+add_executable("${PROJECT_NAME}" drygo.cpp
+
+				images/discowar.jpg
+				images/map_pap.jpg
+				images/dryg.png)
 											
 target_link_libraries("${PROJECT_NAME}" sfml-graphics-s-d
 						  sfml-window-s-d
@@ -37,4 +38,3 @@ target_link_libraries("${PROJECT_NAME}" sfml-graphics-s-d
 						  vorbis
 						  ogg)
 file(COPY "images" DESTINATION "/")
-file(COPY "audio" DESTINATION "/")
